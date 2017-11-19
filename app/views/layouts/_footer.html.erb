@@ -1,1 +1,52 @@
-<%= button_to "Create Artwork", new_art_path, id: 'footer', method: :get %>
+<button type="button" id="newArt">
+  Random Artwork
+</button>
+
+<script>
+  $(function () {
+    $('#newArt').click(function() {
+    window.location.href = "/";      
+  });
+});
+</script>
+
+<!-- Button trigger modal -->
+<button type="button" id="footer" data-toggle="modal" data-target="#artModal">
+  Contribute Artwork
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="artModal" tabindex="-1" role="dialog" aria-labelledby="artModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <h5 class="modal-title" id="artModalLabel">Art Canvas</h5>
+        
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+        
+        <%= simple_form_for @art do |f| %>
+          <div class="modal-body">
+            <label>Title</label>
+            <%= f.input :title, label: false, placeholder: 'Title', input_html: {style: 'width: 270px'} %>
+            <br />
+            <label>Artwork</label>            
+            <%= f.input :artwork, label: false, input_html: {style: 'width: 270px'} %>
+            <br />
+            <label>Artist</label>
+            <%= f.input :artist, label: false, placeholder: 'Anonymous', input_html: {style: 'width: 270px'} %>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <div data-dismiss="modal">
+            <%= f.submit "Submit Masterpiece", class: 'btn btn-primary artSubmit' %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

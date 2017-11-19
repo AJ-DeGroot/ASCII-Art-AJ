@@ -5,9 +5,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+gem 'bootstrap'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'popper_js', '~> 1.11.1'
 gem 'rubocop'
 # Use simple_form_for @item do |f| to generate a form
 gem 'simple_form'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-tether', '>= 1.3.3'
+end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.4'

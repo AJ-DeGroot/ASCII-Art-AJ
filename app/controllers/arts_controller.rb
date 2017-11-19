@@ -1,15 +1,11 @@
 class ArtsController < ApplicationController
   def index
-    @arts = Art.all
-  end
-
-  def new
     @art = Art.new
+    @arts = Art.order("RANDOM()").limit(1)
   end
 
   def create
     @art = Art.create(art_params)
-    redirect_to root_path
   end
 
   private

@@ -1,4 +1,40 @@
-<h1>Art Index</h1>
-<% @arts.each do |art| %>
-  <%= art.artwork %>
-<% end %>
+<h1 class="artTitle">
+  <% @arts.each do |art| %>
+    <%= art.title %>
+  <% end %>
+</h1>
+<div class="artDisplay">
+  <% @arts.each do |art| %>
+    <p class="artArtwork">
+      <%= art.artwork %>
+    </p>
+    <br />
+    <br />
+    <p class="artArtist">
+      -
+      <%= art.artist %>
+    </p>
+  <% end %>
+</div>
+
+<script>
+  $(function() {
+        var title = $('.artTitle');
+        var artwork = $('.artArtwork');
+        var artist = $('.artArtist');
+
+        $('.artSubmit').click(function() {
+          var newTitle = $('input#art_title').val();
+          var newArtwork = $('textarea#art_artwork').val();
+          var newArtist = $('input#art_artist').val();
+
+          title.html(newTitle);
+          artwork.html(newArtwork);
+          artist.html(newArtist);
+
+          console.log(newTitle);
+          console.log(newArtwork);
+          console.log(newArtist);
+        });
+    });
+</script>

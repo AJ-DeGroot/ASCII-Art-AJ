@@ -2,10 +2,31 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#newArt {
+  border: none;
+  background-color: #777;
+  color: #444;
+  width: 100%;
+  z-index: 9998;
+  position: fixed;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  height: 40px;
+  font-family: sans-serif;
+  font-weight: 600;
+  font-size: 17pt;
+}
+
+#newArt:hover{
+  background-color: #aaa;
+  color: #fff;
+}
+
 #footer {
-  box-shadow: 0px -2px 4px -2px #2a2a2a;
+  border: none;
   background-color: #333;
-  color: #bbb;
+  color: #1b1b1b;
   width: 100%;
   z-index: 9998;
   position: fixed;
@@ -14,6 +35,61 @@
   right: 0;
   height: 70px;
   font-family: sans-serif;
-  font-weight: 100;
+  font-weight: 600;
+  font-size: 20pt;
+}
+
+#footer:hover{
+  background-color: #aaa;
+  color: #fff;
+}
+
+.art_title {
+  color: #444;
+}
+
+body .modal{
+  width: 300px;
+  left: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html body {
+  background-color: #eee;
+}
+
+.artTitle {
+  margin-top: 1%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  -moz-transform: translate(-50%);
+  -o-transform: translate(-50%);
+  -ms-transform: translate(-50%);
+  font-size: 35pt;
+}
+
+.artDisplay {
+
+  $topMargin: 15%;
+  $topMarginOffset: -15%;
+
+  position: absolute;
+  width: 270px;
+  top: $topMargin;
+  left: 50%;
+  transform: translate(-50%, $topMarginOffset);
+  -webkit-transform: translate(-50%, $topMarginOffset);
+  -moz-transform: translate(-50%, $topMarginOffset);
+  -o-transform: translate(-50%, $topMarginOffset);
+  -ms-transform: translate(-50%, $topMarginOffset);
+}
+
+.artArtist{
+  text-align: right;
   font-size: 10pt;
+  font-family: serif;
+  color: #555;
 }
