@@ -73,8 +73,8 @@ html body {
 
 .artDisplay {
 
-  $topMargin: 15%;
-  $topMarginOffset: -15%;
+  $topMargin: 25%;
+  $topMarginOffset: -25%;
 
   position: absolute;
   width: 270px;
@@ -85,6 +85,8 @@ html body {
   -moz-transform: translate(-50%, $topMarginOffset);
   -o-transform: translate(-50%, $topMarginOffset);
   -ms-transform: translate(-50%, $topMarginOffset);
+  overflow-wrap: break-word;
+  font-family: "Courier New", monospace;
 }
 
 .artArtist{
@@ -92,4 +94,8 @@ html body {
   font-size: 10pt;
   font-family: serif;
   color: #555;
+}
+
+textarea#art_artwork.form-control {
+  font-family: "Courier New", monospace;
 }

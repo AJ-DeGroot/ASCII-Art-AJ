@@ -7,6 +7,9 @@
     $('#newArt').click(function() {
     window.location.href = "/";      
   });
+    $('.artSubmit').click(function(){
+      $('.close').click();
+    })
 });
 </script>
 
@@ -31,18 +34,18 @@
         <%= simple_form_for @art do |f| %>
           <div class="modal-body">
             <label>Title</label>
-            <%= f.input :title, label: false, placeholder: 'Title', input_html: {style: 'width: 270px'} %>
+            <%= f.input :title, label: false, placeholder: 'Title', input_html: {style: 'width: 270px', maxlength: 20} %>
             <br />
             <label>Artwork</label>            
             <%= f.input :artwork, label: false, input_html: {style: 'width: 270px'} %>
             <br />
             <label>Artist</label>
-            <%= f.input :artist, label: false, placeholder: 'Anonymous', input_html: {style: 'width: 270px'} %>
+            <%= f.input :artist, label: false, placeholder: 'Anonymous', input_html: {style: 'width: 270px', maxlength: 15} %>
         </div>
 
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <div data-dismiss="modal">
+          <div>
             <%= f.submit "Submit Masterpiece", class: 'btn btn-primary artSubmit' %>
           </div>
         </div>
